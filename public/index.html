@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Karamunge Traders - Inventory Management</title>
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Pages will be rendered here -->
+  </div>
+
+  <!-- Bottom Navigation -->
+  <nav id="bottom-nav" class="bottom-nav hidden">
+    <a href="#/" class="nav-item" data-route="/">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="#/inventory" class="nav-item" data-route="/inventory">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+        <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+        <line x1="12" y1="22.08" x2="12" y2="12"/>
+      </svg>
+      <span>Inventory</span>
+    </a>
+    <a href="#/history" class="nav-item" data-route="/history">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <polyline points="12 6 12 12 16 14"/>
+      </svg>
+      <span>History</span>
+    </a>
+    <a href="#/more" class="nav-item" data-route="/more">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="1"/>
+        <circle cx="19" cy="12" r="1"/>
+        <circle cx="5" cy="12" r="1"/>
+      </svg>
+      <span>More</span>
+    </a>
+  </nav>
+
+  <!-- Page Scripts -->
+  <script src="/js/app.js"></script>
+  <script src="/pages/login.js"></script>
+  <script src="/pages/dashboard.js"></script>
+  <script src="/pages/stockIn.js"></script>
+  <script src="/pages/stockOut.js"></script>
+  <script src="/pages/transfer.js"></script>
+  <script src="/pages/inventory.js"></script>
+  <script src="/pages/history.js"></script>
+  <script src="/pages/products.js"></script>
+  <script src="/pages/vendors.js"></script>
+  <script src="/pages/receiving.js"></script>
+  <script src="/pages/reports.js"></script>
+  <script src="/pages/reportDetail.js"></script>
+  <script src="/pages/more.js"></script>
+  <script src="/pages/users.js"></script>
+  <script src="/pages/auditLogs.js"></script>
+  <script src="/pages/productDetail.js"></script>
+  <script src="/pages/vendorDetail.js"></script>
+</body>
+</html>
