@@ -29,12 +29,18 @@ app.get('*', (req, res) => {
 
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`Karamunge Traders server running on port ${PORT}`);
-  console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-});
+const isVercel = process.env.VERCEL === '1';
+
+if (!isVercel) {
+  app.listen(PORT, () => {
+    console.log(`Karamunge Traders server running on port ${PORT}`);
+    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
+  });
+}
 
 process.on('SIGINT', async () => {
   await mongoose.disconnect();
   process.exit(0);
 });
+
+module.exports = { app };
