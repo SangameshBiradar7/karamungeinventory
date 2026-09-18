@@ -11,10 +11,6 @@ const { mongoose } = require('./config/database');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-(async () => {
-  await connectDatabase();
-})();
-
 app.use(cors({ origin: true, credentials: true }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -32,10 +28,26 @@ app.use(errorHandler);
 const isVercel = process.env.VERCEL === '1';
 
 if (!isVercel) {
+  (async () => {
+    try {
+      await connectDatabase();
+    } catch (error) {
+      console.error('Failed to connect to database:', error);
+    }
+  })();
+
   app.listen(PORT, () => {
     console.log(`Karamunge Traders server running on port ${PORT}`);
     console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
   });
+} else {
+  (async () => {
+    try {
+      await connectDatabase();
+    } catch (error) {
+      console.error('Vercel database connection error:', error);
+    }
+  })();
 }
 
 process.on('SIGINT', async () => {
